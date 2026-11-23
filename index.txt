@@ -1,0 +1,308 @@
+Java Interview Preparation
+Java 17 LTS
+
+---------------------------------------------------------------------------------------------------------
+
+1. Java Fundamentals
+   
+   Introduction, features, JDK, JRE, JVM, compilation, bytecode, variables, data types, operators and control statements.
+2. Object-Oriented Programming (OOP)
+   
+   Classes, objects, constructors, inheritance, polymorphism, abstraction, encapsulation, interfaces and abstract classes.
+3. Strings and Arrays
+   
+   String pool, String immutability, StringBuilder, StringBuffer, arrays and multidimensional arrays.
+4. Exception Handling
+   
+   try, catch, finally, throw, throws, checked and unchecked exceptions, custom exceptions.
+5. Collections Framework
+   
+   List, Set, Map, Queue, ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap and ConcurrentHashMap.
+6. Java 8+ Features
+   
+   Lambda expressions, functional interfaces, Stream API, Optional, method references, Date and Time API.
+7. Java 17 New Features
+   
+   Records, sealed classes, pattern matching for instanceof, text blocks, switch expressions and other important changes.
+8. Multithreading and Concurrency
+   
+   Threads, Runnable, synchronization, locks, ExecutorService, Callable, Future and thread safety.
+9. Advanced Java Concepts
+   
+   Generics, enums, annotations, reflection, serialization, garbage collection and JVM memory management.
+10. File Handling and JDBC
+    
+    File I/O, NIO, streams, database connectivity, PreparedStatement and transactions.
+11. Java Coding Interview Questions
+    
+    String programs, arrays, collections, sorting, searching, streams and logical coding problems.
+
+
+---------------------------------------------------------------------------------------------------------
+
+PART 1 : Java Fundamentals
+
+1. What is Java ?
+- Java is a high-level, Object-Oriented, class-based, platform independent programming language developed by 
+Sun Microsystems. It is widely used for developing, enterprising application, web-application, Android application and backend systems.
+
+For example :
+  - Banking applications
+  - E-commerce applications
+  - Enterprise Software
+
+---------------------------------------------------------------------------------------------------------
+
+- Features of Java :
+
+~ Platform Independent : Java code can run on different operating system using JVM.
+~ Object-Oriented : Java supported classes & objects.
+~ Simple : Java hava realtively simple syntax compared with languages like C++.
+~ Secure : Java provides bytecode verification, class loading & security mechanism.
+~ Robust : Strong memory management and Exception Handling.
+~ Multithreaded : Supports executing multiple threads concurrently.
+~ Portable : Java bytecode can run on different platforms.
+~ High Performance : JIT compliers optimizes frequently executed code.
+~ Distributed : Support network-based and distributed application.
+~ Dynamic : Classes can be loaded at runtime.
+
+---------------------------------------------------------------------------------------------------------
+
+- IMP IQ : 
+2. Why is Java Platform Independent ?
+- Java is platform independent is because Java source code is compiled into bytecode instead of being
+directly compiled into machine-specific code.
+(Write Once Run Anywhere)
+
+---------------------------------------------------------------------------------------------------------
+
+3. JDK vs JRE vs JVM
+
+- JVM : Java Virtual Machine 
+    - It is responsible for executing Java bytecode
+
+~ Main responsibility :
+    ~ Loading Class Files.
+    ~ Verifing ByteCodes.
+    ~ Exceuting ByteCodes.
+    ~ Managing Memory.
+    ~ Garbage Collection.
+    ~ Providing runtime environment.
+
+---------------------------------------------------------------------------------------------------------
+
+- JRE : Java Runtime Environment
+    - JRE provides the environment required to run Java application.
+
+~ JVM includes : 
+    ~ JVM
+    ~ Java class libraries
+    ~ Other runtime components
+
+---------------------------------------------------------------------------------------------------------
+
+- JDK : Java Development Kit
+    - JDK provides everything needed to develop and run Java application.
+
+~ It includes :
+    ~ Java compiler ( Javac )
+    ~ Java launcher ( Java )
+    ~ Debugging and Development tools
+    ~ Runtime components and libraries
+
+---------------------------------------------------------------------------------------------------------
+        JDK                                   JRE                                     JVM
+---------------------------------------------------------------------------------------------------------
+- Development Kit                       - Runtime Environment                   - Virtual Machine
+- Used to develop and                   - Traditionally used to                 - Executes bytecodes.
+run application.                         run application.
+- Includes compiler                     - Includes JVM and                      - Executes .class Files
+and tools.                              libraries
+- Largest scope.                        - Medium scope                          - Core execution component
+
+---------------------------------------------------------------------------------------------------------
+
+- IMP IQ :
+- Can we run Java without JDK?
+~ Yes. A Java application can run using a suitable Java runtime environment without the full development kit.
+However, you need development tools such as javac to compile Java source code.
+
+~ Note : Modern Java distributions, including JDK 17, generally provide a JDK rather than a separately 
+distributed full JRE.
+
+---------------------------------------------------------------------------------------------------------
+
+- How Java Code Executes
+
+    ~ Java source code is written in a .java file.
+    ~ Java compiler converts source code into bytecodes.
+    ~ Class loader loads the required class.
+    ~ ByteCode Verifier check bytecode validity.
+    ~ JVM executes the bytecode through its execution engine.
+    ~ JIT compiler optimizes frequently executed code into native machine code.
+
+---------------------------------------------------------------------------------------------------------
+
+- Variables in Java 
+    - A variable is a named memory location used to stored data.
+    - Java has three types of variable 
+        1. Local Variables
+        2. Instance Variables
+        3. Static Variables
+
+---------------------------------------------------------------------------------------------------------
+
+~ Local Variable :
+    - Variable declared inside a method, constructor or block.
+    - IMP :
+        ~ Must be initialized before use.
+        ~ Scope is limited to its block.
+        ~ Does not get a default value.
+
+---------------------------------------------------------------------------------------------------------
+
+~ Instance Variable :
+    - Variable declared inside a class but outside methods, constructor or blocks, withour the static keyword.
+    - Each object gets is own instance variable
+
+---------------------------------------------------------------------------------------------------------
+
+~ Static Variable :
+    - Variable declared using the static keyword.
+    - A static variable belongs to the class and is shared among its instances.
+
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+        Local                                Instance                                    Static
+---------------------------------------------------------------------------------------------------------
+
+- Inside method/                  - Inside class.                              - Inside class with
+block.                                                                         static.
+- No default value.               - Gets default value.                       - Gets default value.
+- Block scope.                    - Object-specific.                          - Class-level.
+- Stored in stack                 - Part of object.                           - Assciated with class.
+frames when appli-
+cable.  
+
+---------------------------------------------------------------------------------------------------------
+
+- Data Type in Java :
+    - Java is a statically typed language. Every variable must have a declared type.
+    - Java has two categories of data type 
+        1. Primitive Data Type
+            - In primitive has 8 Data type :
+                ~ byte : 8bits : byte a = 10;
+                ~ short : 16bits : short a = 100;
+                ~ int : 32bits : int a = 500;
+                ~ long : 64bits : long a = 10000L;
+                ~ float : 32bits : float a = 12.4f;
+                ~ double : 64bits : double a = 12.45;
+                ~ char : 16bits : char a = 'A';
+                ~ boolean : JVM-dependent representation : boolean a = true;
+
+        2. Non-Primitive Data Type
+            - In non-primitive has 6 Data type :
+                ~ String
+                ~ Array
+                ~ Classes
+                ~ Interfaces
+                ~ Enums
+                ~ Records
+
+---------------------------------------------------------------------------------------------------------
+
+- Type Casting in Java :
+    - Type casting means converting one data type into another.
+    - In java, There are two types :    
+        1. Widening Casting
+            - Converting a smaller compatible numeric type into a larger type.
+            - Eg :
+                int number = 100;
+                double result = number;
+                System.out.println(result);
+
+        2. Narrowing Casting
+            - Converting a larger numeric type into a smaller type.
+            - Eg :
+                double number = 100.75;
+                int result = (int) number;
+                System.out.println(result);
+
+---------------------------------------------------------------------------------------------------------
+
+- Operators :
+    ~ Operators are symbols used to perform operations on variables and values.
+    ~ Types of Operators :
+        1. Arithmetic ( +, -, *, /, % )
+        2. Relational ( ==, !=, >, <, >=, <= )
+        3. Logical ( &&, ||, ! )
+        4. Assignment ( =, +=, -=, *=, /= )
+        5. Unary ( ++, -- )
+        6. Bitwise ( &, |, ^, ~ )
+        7. Shift ( <<, >>, >>> )
+        8. Ternary ( condition ? value1 : value2 )
+        9. Type Comparison ( instanceof )
+
+---------------------------------------------------------------------------------------------------------
+
+- IMP IQ :
+- Difference Between == and .equals() ?
+    ~ (==) compares primitive values. For objects, it compares references (whether both references point to the same object).
+    ~ (.equals()) compare logical equality when the class implements or overrides it appropriately.
+
+---------------------------------------------------------------------------------------------------------
+
+- Control Statement 
+    - Control statement determine the flow of program execution.
+    - Control statement in Java are used to control the flow of execution of a program based on condition, 
+    decisions, and repetitions.
+    - There are three Statements :
+        1. Decision making (if, if-else, switch)
+            - Decision-Making Statements are used to execute different blocks of code depending on whether a condition is true.
+
+        2. Looping (for, while, do while)
+        3. Jump (break, continue, return)
+
+---------------------------------------------------------------------------------------------------------
+PART 2 - Java 17 IMP Features
+---------------------------------------------------------------------------------------------------------
+- Java 17 is a Long Term Support (LTS) release introduced in September 2021.
+- It includes several important language and JVM improvements.
+
+1. Records :
+    - Records were introduced in Java 16 as a finialized feature.
+    - A record is a special type of class designed to hold data with less boilerplate code.
+    - Key pts :
+        ~ Java automatically provides :
+            - Constructor
+            - Access Modifier
+            - equals()
+            - hashCode()
+            - toString()
+
+---------------------------------------------------------------------------------------------------------
+- IMP : IQ 
+- Are Records Immutable?
+    - Records are shallowly immutable. Their component fields are final, so their reference cannot reassigned after construction. However, if a component refers to a mutable object, that object's contents can still change.
+
+- Where are records useful?
+    1. Data Transfer Objects (DTOs)
+    2. API response objects
+    3. Data carrier objects
+    4. Configuration data
+
+---------------------------------------------------------------------------------------------------------
+Other Java IMP 17 changes :
+- Features :
+    1. Lambda Expressions
+    2. Stream API
+    3. Optional
+    4. Modules
+    5. Local variable type Inference (var)
+    6. HTTP client API
+    7. Switch Expressions
+    8. Text blocks
+    9. Records
+    10. Pattern Matching instanceof
+    11. sealed classes
